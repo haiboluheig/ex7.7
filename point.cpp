@@ -21,5 +21,5 @@ int Point::oordonne() const {
 }
 
 Point Point::operator+(const Point &point) const {
-    return Point(x + point.x, y + point.y);
+    return Point(this->x + point.x, this->y + point.y);
 }
