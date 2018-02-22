@@ -13,7 +13,7 @@ class Point {
 
 public:
     Point operator + (const Point& point) const;
-    Point(int x, int y);
+    Point(int x=0, int y=0);
     void deplacer(int dx, int dy);
     int abscisse() const;
     int oordonne() const;
