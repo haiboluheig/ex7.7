@@ -4,7 +4,7 @@
 
 #include "point.h"
 
-Point::Point(int x=0, int y=0) : x(x), y(y) {}
+Point::Point(int x, int y) : x(x), y(y) {}
 
 void Point::deplacer(int dx, int dy) {
     x += dx;
