@@ -1,39 +1,50 @@
-
-#include <cstdlib>
-#include <string>
 #include"maclasse.h"
 using namespace std;
 
-Pays::Pays(const string& nom, double population, unsigned superficie) : nom(nom), population(population), superficie(superficie) {
-}
-//Modificateurs
-
-void Pays::setNom(const string& nom) {
-    this->nom = nom;
+C::C(int x) : x(x) {
 }
 
-void Pays::setPopulation(double population) {
-    this->population = population;
+C C::operator+(const C& a) const {
+    C temp;
+    temp.x = x + a.x;
+    return temp;
 }
 
-void Pays::setSuperficie(unsigned superficie) {
-    this->superficie = superficie;
-}
-//Sélecteurs
-
-string Pays::getNom() const {
-    return nom;
+C C::operator=(const C& a) {
+    this->x = a.x;
 }
 
-double Pays::getPopulation()const {
-    return population;
+C C::operator++() {
+    this->x = this->x + 1;
+    return *this;
 }
 
-unsigned Pays::getSuerficie() const {
-    return superficie;
+C C::operator++(const int a) {
+    C temp;
+    temp.x = this->x;
+    this->x = this->x + a + 1;
+    return temp;
 }
-//Autre
 
-double Pays::densitePopulation()const {
-    return superficie == 0 ? 0 : (population * 1E6 / superficie);
+C operator+=(C& a, const C& b) {
+    a = (a + b);
+}
+
+bool operator==(C& a, C& b) {
+    if (a.x == b.x)
+        return true;
+    else
+        return false;
+}
+
+bool operator!=(C& a, C& b) {
+    if (a == b)
+        return false;
+    else
+        return true;
+}
+
+ostream& operator<<(ostream& lhs, const C& rhs) {
+    lhs << "n = " << rhs.x;
+    return lhs;
 }
