@@ -26,8 +26,8 @@ C C::operator++(const int a) {
     return temp;
 }
 
-C& C::operator+=(C& a, const C& b) {
-    a = (a + b);
+C& C::operator+=(const C& rhs) {
+    x = x + rhs.x;
     return *this;
 }
 
