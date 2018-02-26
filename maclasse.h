@@ -12,8 +12,8 @@ public:
     C operator++(const int); //identique :friend C operator ++(C&,int)
     C operator=(const C&);
     //friend fonctions et surchages d'operateurs
-    friend bool operator==(C&, C&);
-    friend bool operator!=(C&, C&);
+    friend bool operator==(const C&, const C&);
+    friend bool operator!=(const C&,const C&);
     friend C operator+=(C&, const C&);
     friend ostream& operator<<(ostream&, const C&);
 private:
